@@ -16,7 +16,7 @@ describe('BonusBallChart', () => {
   })
 
   it('renders a bar for each score', () => {
-    const { container } = render(<BonusBallChart game="powerball" scores={scores} />)
+    render(<BonusBallChart game="powerball" scores={scores} />)
     // Each ball number appears as a label
     expect(screen.getByText('1')).toBeInTheDocument()
     expect(screen.getByText('2')).toBeInTheDocument()

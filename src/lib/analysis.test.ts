@@ -2,16 +2,6 @@ import { describe, it, expect } from 'vitest'
 import { scoreNumbers, analyze } from './analysis'
 import type { Draw } from './types'
 
-function makeDraws(count: number, whites: number[], bonus: number, baseDate = '2020-01-01'): Draw[] {
-  return Array.from({ length: count }, (_, i) => ({
-    date: `2020-${String(Math.floor(i / 30) + 1).padStart(2, '0')}-${String((i % 28) + 1).padStart(2, '0')}`,
-    whites,
-    bonus,
-    game: 'powerball' as const,
-    era: 'current' as const,
-  }))
-}
-
 describe('scoreNumbers', () => {
   it('returns one score per number in the pool', () => {
     const draws: Draw[] = [
